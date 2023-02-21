@@ -9,8 +9,7 @@ function checkUserExists(req, res, next) {
   
     return next();
   }
-  
-  function checkUserInArray(req, res, next) {
+    function checkUserInArray(req, res, next) {
     const user = users[req.params.index];
   
     if (!user) {
