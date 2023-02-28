@@ -1,10 +1,10 @@
 const express = require("express");
 const server = express();
 server.use(express.json());
-const users=["Paulo","Conrado","Juliana"];
+const users=["Bernardo","Conrado","Juliana"];
 function checkUserExists(req, res, next) {
     if (!req.body.name) {
-      return res.status(400).json({ error: "User name is required" });
+      return res.status(400).json({ error: "nome do usario é obrigatario" });
     }
   
     return next();
@@ -13,7 +13,7 @@ function checkUserExists(req, res, next) {
     const user = users[req.params.index];
   
     if (!user) {
-      return res.status(400).json({ error: "User does not exists" });
+      return res.status(400).json({ error: "user nao existe" });
     }
   
     req.user = user;
